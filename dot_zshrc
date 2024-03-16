@@ -106,10 +106,9 @@ HISTSIZE=999999999
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
-alias vim='nvim'
 alias ls='ls -lah'
 alias tree='tree -a'
-alias wol-gaming='wakeonlan -i $(dig +short home-lune.ddns.net) -p 9 04:7C:16:DB:D7:28'
+alias wol-gaming='wakeonlan -i $(dig +short $(cat ~/.config/wol/ddns)) -p 9 $(cat ~/.config/wol/mac)'
 export EDITOR=nano
 export VISUAL="$EDITOR"
 

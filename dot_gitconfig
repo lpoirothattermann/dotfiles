@@ -1,0 +1,8 @@
+[user]
+	name = Louis POIROT--HATTERMANN
+	email = lpoirothattermann@gmail.com
+[push]
+	autoSetupRemote = true
+[core]
+	editor = vim
+	askpass = git-gui--askpass

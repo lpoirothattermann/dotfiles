@@ -109,6 +109,14 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias ls='ls -lah'
 alias tree='tree -a'
 alias wol-gaming='wakeonlan -i $(dig +short $(cat ~/.config/wol/ddns)) -p 9 $(cat ~/.config/wol/mac)'
+
+rmf () {
+  rm -rf $(fd -H -t file -t directory -I -E node_modules -E vendor -E .git -E .DS_Store -E .idea | fzf --preview '[ -f {} ] && cat {} || tree -a {}')
+}
+rmfe () {
+  rm -rf $(fd -H -t file -t directory -I -E node_modules -E vendor -E .git -E .DS_Store -E .idea | fzf --exact --preview '[ -f {} ] && cat {} || tree -a {}')
+}
+
 export EDITOR=nano
 export VISUAL="$EDITOR"
 

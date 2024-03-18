@@ -15,6 +15,9 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.lsp]
+display-messages = true
+
 [editor.statusline]
 left = ["mode", "spacer", "version-control", "spinner"]
 center = ["file-name"]

@@ -16,7 +16,7 @@ font:
   size: 15
   offset:
     x: 0
-    y: 10
+    y: 0
 
 # Colors (Hyper)
 colors:

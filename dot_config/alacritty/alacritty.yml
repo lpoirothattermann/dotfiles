@@ -17,9 +17,6 @@ font:
   offset:
     x: 0
     y: 10
-  normal:
-    family: JetBrainsMonoNL NF
-    style: Regular
 
 # Colors (Hyper)
 colors:

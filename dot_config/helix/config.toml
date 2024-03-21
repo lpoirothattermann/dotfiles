@@ -9,6 +9,7 @@ completion-trigger-len = 1
 bufferline = "multiple"
 color-modes = true
 auto-save = true 
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -36,3 +37,6 @@ render = true
 [keys.normal]
 "{" = "jump_backward"
 "}" = "jump_forward"
+"S-esc" = ":buffer-close"
+"S-left" = "goto_previous_buffer"
+"S-right" = "goto_next_buffer"

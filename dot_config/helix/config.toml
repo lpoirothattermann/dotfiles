@@ -35,8 +35,13 @@ hidden = false
 render = true
 
 [keys.normal]
+"r" = ":config-reload"
 "{" = "jump_backward"
 "}" = "jump_forward"
 "S-esc" = ":buffer-close"
 "S-left" = "goto_previous_buffer"
 "S-right" = "goto_next_buffer"
+"?" = "toggle_comments"
+
+[keys.select]
+"?" = "toggle_comments"

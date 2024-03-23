@@ -2,3 +2,10 @@ encryption = "age"
 [age]
     identity = "~/.config/chezmoi/key.txt"
     recipient = "age1j3tg4964nea9lwqn7lv4c6k6yvc39hr22563hnu8fvau2kf8auns2delfm"
+
+[data]
+    {{- $git_fullname := promptString "[GIT] Prenom et nom" }}
+    git_fullname = {{ $git_fullname | quote }}
+    {{- $git_email := promptString "[GIT] Adresse mail" }}
+    git_email = {{ $git_email | quote }}
+

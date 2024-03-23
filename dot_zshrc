@@ -117,7 +117,14 @@ rmfe () {
   rm -rf $(fd -H -t file -t directory -I -E node_modules -E vendor -E .git -E .DS_Store -E .idea | fzf --exact --preview '[ -f {} ] && cat {} || tree -a {}')
 }
 
-export EDITOR=nano
+# Source all additional (laptop/desktop/server specific) files
+if [[ -d ~/.zshrc.d ]]; then
+  for file in ~/.zshrc.d/*.zshrc; do
+    source $file
+  done
+fi
+
+export EDITOR=hx
 export VISUAL="$EDITOR"
 
 export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"

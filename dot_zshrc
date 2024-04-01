@@ -1,5 +1,3 @@
-# if [ "$TMUX" = "" ] && [ -z "$TERMINAL_EMULATOR" ] && [ $TERM_PROGRAM != "vscode" ]; then tmux; fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -117,6 +115,17 @@ rmfe () {
   rm -rf $(fd -H -t file -t directory -I -E node_modules -E vendor -E .git -E .DS_Store -E .idea | fzf --exact --preview '[ -f {} ] && cat {} || tree -a {}')
 }
 
+if [[ -x "$(command -v hx)" ]]; then
+  export EDITOR=hx
+else
+  export EDITOR=vi
+fi
+export VISUAL="$EDITOR"
+
+if [[ -d /Users/${USER}/go/bin ]]; then
+  export PATH="/Users/${USER}/go/bin:$PATH"
+fi
+
 # Source all additional (laptop/desktop/server specific) files
 if [[ -d ~/.zshrc.d ]]; then
   for file in ~/.zshrc.d/*.zshrc; do
@@ -124,7 +133,3 @@ if [[ -d ~/.zshrc.d ]]; then
   done
 fi
 
-export EDITOR=hx
-export VISUAL="$EDITOR"
-
-export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"

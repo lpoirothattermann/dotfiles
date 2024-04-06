@@ -1,4 +1,4 @@
-theme = "papercolor-dark"
+theme = "gruvbox_dark_hard"
 
 [editor]
 line-number = "relative"
@@ -10,6 +10,7 @@ bufferline = "multiple"
 color-modes = true
 auto-save = true 
 true-color = true
+popup-border = "all"
 
 [editor.cursor-shape]
 insert = "bar"

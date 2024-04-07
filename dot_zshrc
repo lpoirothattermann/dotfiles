@@ -105,7 +105,7 @@ HISTSIZE=999999999
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 alias ls='ls -lah'
-alias tree='tree -a'
+alias fe='CLICOLOR_FORCE=1 watch -t -n 1 -c tree -a'
 alias wol-gaming='wakeonlan -i $(dig +short $(cat ~/.config/wol/ddns)) -p 9 $(cat ~/.config/wol/mac)'
 
 rmf () {

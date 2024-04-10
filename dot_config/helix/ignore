@@ -1,0 +1,11 @@
+/node_modules/
+/vendor/
+/build/
+/builds/
+/var/
+/public/bundles/
+/public/js/
+/public/css/
+/public/tmp/
+/public/build/
+/public/vendor/

@@ -30,6 +30,11 @@ mode.select = "SELECT"
 
 [editor.file-picker]
 hidden = false
+parents = false
+ignore = true
+git-ignore = false
+git-global = false
+git-exclude = false
 
 [editor.indent-guides]
 render = true

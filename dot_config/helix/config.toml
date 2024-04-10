@@ -8,7 +8,6 @@ idle-timeout = 0
 completion-trigger-len = 1
 bufferline = "multiple"
 color-modes = true
-auto-save = true 
 true-color = true
 popup-border = "all"
 

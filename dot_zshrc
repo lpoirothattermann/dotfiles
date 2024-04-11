@@ -138,3 +138,10 @@ if [[ -d ~/.zshrc.d ]]; then
   done
 fi
 
+cdc () {
+  if [[ -v PROJECTS_PATH ]]; then
+    cd "${PROJECTS_PATH}$(command ls -1 ${PROJECTS_PATH} | fzf)"
+  else
+    echo "Variable PROJECTS_PATH missing in .zshrc"
+  fi
+}

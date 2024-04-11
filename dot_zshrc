@@ -127,6 +127,10 @@ if [[ -d /Users/${USER}/go/bin ]]; then
   export PATH="/Users/${USER}/go/bin:$PATH"
 fi
 
+if [[ -d /Users/${USER}/.tools/flutter/bin ]]; then
+  export PATH="/Users/${USER}/.tools/flutter/bin:$PATH"
+fi
+
 # Source all additional (laptop/desktop/server specific) files
 if [[ -d ~/.zshrc.d ]]; then
   for file in ~/.zshrc.d/*.zshrc; do

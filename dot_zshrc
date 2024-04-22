@@ -79,7 +79,7 @@ export CLICOLOR=1
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 alias ls='ls -lah'
-alias fe='CLICOLOR_FORCE=1 watch -t -n 3 -c tree -a'
+alias fe='CLICOLOR_FORCE=1 watch -t -n 3 -c tree -I node_modules -I vendor -I .git  -a'
 alias lg='lazygit'
 alias wol-gaming='wakeonlan -i $(dig +short $(cat ~/.config/wol/ddns)) -p 9 $(cat ~/.config/wol/mac)'
 

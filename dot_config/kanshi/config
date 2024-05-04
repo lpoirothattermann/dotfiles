@@ -1,0 +1,8 @@
+profile 1 {
+	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 0,0
+}
+
+profile 2 {
+	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 720,2640
+	output "Samsung Electric Company S34J55x H4LT303171" mode 3440x1440@49.987Hz position 0,1200
+}

@@ -20,8 +20,7 @@ bindsym $mod+l exec swaylock -fFel
 output * bg /usr/share/backgrounds/default.png fill
 
 # swaymsg -t get_outputs to get current
-output eDP-1 pos 720 2640
-output DP-2 pos 0 1200
+exec_always pkill kanshi; exec kanshi
 
 ### Idle configuration
 #
@@ -92,6 +91,11 @@ output DP-2 pos 0 1200
 #
 # Workspaces:
 #
+    # Move workspace to another screen
+    bindsym $mod+Alt+Control+Right move workspace to output right
+    bindsym $mod+Alt+Control+Left move workspace to output left
+    bindsym $mod+Alt+Control+Down move workspace to output down
+    bindsym $mod+Alt+Control+Up move workspace to output up
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2

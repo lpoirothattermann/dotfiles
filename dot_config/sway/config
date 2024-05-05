@@ -3,6 +3,9 @@
 set $mod Mod4
 set $term /usr/bin/alacritty
 
+# Setup cliphist
+exec wl-paste --watch cliphist store
+
 set $rofi_cmd rofi \
        -terminal '$term'
 
@@ -106,8 +109,8 @@ input "1133:50509:Logitech_USB_Receiver" {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+minus splith # TODO check of work
+    bindsym $mod+shift+backslash splitv # TODO check if work
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -129,11 +132,11 @@ input "1133:50509:Logitech_USB_Receiver" {
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+plus move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    bindsym $mod+equal scratchpad show
 #
 # Resizing containers:
 #
@@ -165,5 +168,8 @@ client.unfocused        #ffffff #000000 #ffffff #000000   #ffffff
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
+
+bindsym $mod+c exec wtype -M ctrl -M shift -k c -m shift -m ctrl
+bindsym $mod+v exec cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy && wtype -M ctrl -M shift -k v -m shift -m ctrl
 
 include $HOME/.config/sway/config.d/*

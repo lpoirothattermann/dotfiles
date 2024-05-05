@@ -208,6 +208,8 @@ bindsym $mod+r mode "resize"
 #
 
 gaps inner 5
+smart_gaps on
+smart_borders on
 
 # class                 border  bground text    indicator child_border
 client.focused          #11ff00 #11ff00 #000000 #11ff00   #11ff00

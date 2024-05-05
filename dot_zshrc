@@ -97,17 +97,24 @@ else
 fi
 export VISUAL="$EDITOR"
 
+# MacOS
 if [[ -d /Users/${USER}/go/bin ]]; then
   export PATH="/Users/${USER}/go/bin:$PATH"
-fi
-
-if [[ -d /usr/local/go/bin ]]; then
-  export PATH="/usr/local/go/bin:$PATH"
 fi
 
 if [[ -d /Users/${USER}/.tools/flutter/bin ]]; then
   export PATH="/Users/${USER}/.tools/flutter/bin:$PATH"
 fi
+
+# Linux
+if [[ -d /usr/local/go/bin ]]; then
+  export PATH="/usr/local/go/bin:$PATH"
+fi
+
+if [[ -d /home/${USER}/go/bin ]]; then
+  export PATH="/home/${USER}/go/bin:$PATH"
+fi
+
 
 # Source all additional (laptop/desktop/server specific) files
 if [[ -d ~/.zshrc.d ]]; then

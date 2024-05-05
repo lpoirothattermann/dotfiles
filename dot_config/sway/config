@@ -13,7 +13,7 @@ set $term /usr/bin/alacritty
 set $rofi_cmd rofi \
        -terminal '$term'
 
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+set $menu $rofi_cmd -show combi -combi-modes drun -modes combi
 bindsym $mod+l exec swaylock -fFel
 
 # Background

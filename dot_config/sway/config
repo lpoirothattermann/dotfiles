@@ -4,7 +4,7 @@ set $mod Mod4
 set $term /usr/bin/alacritty
 
 # Setup cliphist
-exec wl-paste --watch cliphist store
+exec_always pkill wl-paste; wl-paste --watch cliphist store
 
 set $rofi_cmd rofi \
        -terminal '$term'
@@ -109,8 +109,8 @@ input "1133:50509:Logitech_USB_Receiver" {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+minus splith # TODO check of work
-    bindsym $mod+shift+backslash splitv # TODO check if work
+    bindsym $mod+bar splith
+    bindsym $mod+underscore splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -159,14 +159,13 @@ bindsym $mod+r mode "resize"
 # Style
 gaps inner 5
 smart_gaps on
-smart_borders on
 
 # class                 border  bground text    indicator child_border
-client.focused          #11ff00 #11ff00 #000000 #11ff00   #11ff00
-client.focused_inactive #ffffff #000000 #ffffff #000000   #ffffff
-client.unfocused        #ffffff #000000 #ffffff #000000   #ffffff
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.focused          #11ff00 #11ff00 #000000 #333fff   #11ff00
+client.focused_inactive #ffffff #000000 #ffffff #11ff00   #ffffff
+client.unfocused        #ffffff #000000 #ffffff #11ff00   #ffffff
+client.urgent           #44475A #FF5555 #F8F8F2 #11ff00   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #11ff00   #282A36
 client.background       #F8F8F2
 
 bindsym $mod+c exec wtype -M ctrl -M shift -k c -m shift -m ctrl

@@ -10,7 +10,6 @@ set $rofi_cmd rofi \
        -terminal '$term'
 
 set $menu $rofi_cmd -show combi -combi-modes drun -modes combi
-bindsym $mod+l exec swaylock -fFel
 
 # Background
 output * bg /usr/share/backgrounds/default.png fill
@@ -56,7 +55,9 @@ input "1133:50509:Logitech_USB_Receiver" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    # Lock
+    bindsym $mod+Escape exec swaylock -fFel
 #
 # Moving around:
 #

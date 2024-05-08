@@ -107,6 +107,10 @@ if [[ -d /Users/${USER}/.tools/flutter/bin ]]; then
 fi
 
 # Linux
+if [[ -d /home/${USER}/bin-test ]]; then
+  export PATH="/home/${USER}/bin-test:$PATH"
+fi
+
 if [[ -d /usr/local/go/bin ]]; then
   export PATH="/usr/local/go/bin:$PATH"
 fi

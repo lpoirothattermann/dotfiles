@@ -58,6 +58,8 @@ input "1133:50509:Logitech_USB_Receiver" {
     bindsym $mod+Shift+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     # Lock
     bindsym $mod+Escape exec swaylock -fFel
+    # Screenshot
+    bindsym $mod+XF86Launch2 exec grim -g "$(slurp -d)" - | swappy -f -
 #
 # Moving around:
 #

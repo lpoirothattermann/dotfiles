@@ -58,6 +58,7 @@ input "1133:50509:Logitech_USB_Receiver" {
     bindsym $mod+Shift+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     # Lock
     bindsym $mod+Escape exec swaylock -fFel
+
     # Screenshot
     bindsym $mod+XF86Launch2 exec grim -g "$(slurp -d)" - | swappy -f -
 #
@@ -93,6 +94,8 @@ input "1133:50509:Logitech_USB_Receiver" {
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
+    bindsym $mod+bracketleft workspace prev
+    bindsym $mod+bracketright workspace next
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -140,6 +143,7 @@ input "1133:50509:Logitech_USB_Receiver" {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+equal scratchpad show
+
 #
 # Resizing containers:
 #

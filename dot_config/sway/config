@@ -60,7 +60,7 @@ input "1133:50509:Logitech_USB_Receiver" {
     bindsym $mod+Escape exec swaylock -fFel
 
     # Screenshot
-    bindsym $mod+XF86Launch2 exec grim -g "$(slurp -d)" - | swappy -f -
+    bindsym $mod+Print exec grim -g "$(slurp -d)" - | swappy -f -
 #
 # Moving around:
 #

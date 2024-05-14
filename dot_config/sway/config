@@ -30,6 +30,11 @@ input "1739:52839:SYNA8018:00_06CB:CE67_Touchpad" {
 input "1133:50509:Logitech_USB_Receiver" {
     accel_profile flat
 }
+input type:keyboard {
+    xkb_layout "us"
+    xkb_variant "altgr-intl"
+    xkb_numlock disabled
+}
 
 ### Key bindings
 #

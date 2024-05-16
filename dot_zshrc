@@ -81,12 +81,16 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias ls='ls -lah'
 alias fe='CLICOLOR_FORCE=1 watch -t -n 3 -c tree -I node_modules -I vendor -I .git  -a'
 alias lg='lazygit'
+alias yz='yazi'
 alias wol-gaming='wakeonlan -i $(dig +short $(cat ~/.config/wol/ddns)) -p 9 $(cat ~/.config/wol/mac)'
 
-rmf () {
+function envf {
+  printenv $(printenv | sed 's;=.*;;' | sort | fzf)
+}
+function rmf {
   rm -rf $(fd -H -t file -t directory -I -E node_modules -E vendor -E .git -E .DS_Store -E .idea | fzf --preview '[ -f {} ] && cat {} || tree -a {}')
 }
-rmfe () {
+function rmfe {
   rm -rf $(fd -H -t file -t directory -I -E node_modules -E vendor -E .git -E .DS_Store -E .idea | fzf --exact --preview '[ -f {} ] && cat {} || tree -a {}')
 }
 
@@ -97,28 +101,35 @@ else
 fi
 export VISUAL="$EDITOR"
 
-# MacOS
-if [[ -d /Users/${USER}/go/bin ]]; then
-  export PATH="/Users/${USER}/go/bin:$PATH"
+# Go
+if [[ -d $HOME/go/bin ]]; then
+  export PATH="$HOME/go/bin:$PATH"
 fi
 
-if [[ -d /Users/${USER}/.tools/flutter/bin ]]; then
-  export PATH="/Users/${USER}/.tools/flutter/bin:$PATH"
-fi
-
-# Linux
-if [[ -d /home/${USER}/bin-test ]]; then
-  export PATH="/home/${USER}/bin-test:$PATH"
-fi
-
+# Go
 if [[ -d /usr/local/go/bin ]]; then
   export PATH="/usr/local/go/bin:$PATH"
 fi
 
-if [[ -d /home/${USER}/go/bin ]]; then
-  export PATH="/home/${USER}/go/bin:$PATH"
+# Flutter
+if [[ -d $HOME/.tools/flutter/bin ]]; then
+  export PATH="$HOME/.tools/flutter/bin:$PATH"
 fi
 
+# Flutter
+if [[ -d $HOME/.pub-cache/bin ]]; then
+  export PATH="$HOME/.pub-cache/bin:$PATH"
+fi
+
+# Gem (Ruby)
+if [[ -d $HOME/.gem ]]; then
+  export GEM_HOME="$HOME/.gem"
+  export PATH="$GEM_HOME/bin:$PATH"
+fi
+
+if [[ -d $HOME/bin-test ]]; then
+  export PATH="$HOME/bin-test:$PATH"
+fi
 
 # Source all additional (laptop/desktop/server specific) files
 if [[ -d ~/.zshrc.d ]]; then

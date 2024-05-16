@@ -78,7 +78,7 @@ history = 100000
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [window]
-option_as_alt = "OnlyRight"
+option_as_alt = "OnlyLeft"
 
 [window.padding]
 x = 0

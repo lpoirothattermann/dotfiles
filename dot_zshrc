@@ -103,6 +103,13 @@ function rmf {
 function rmfe {
   rm -rf $(fd -H -t file -t directory -I -E node_modules -E vendor -E .git -E .DS_Store -E .idea | fzf --exact --preview '[ -f {} ] && cat {} || tree -a {}')
 }
+cdc () {
+  if [[ -v PROJECTS_PATH ]]; then
+    cd "${PROJECTS_PATH}$(command ls -1 ${PROJECTS_PATH} | fzf)"
+  else
+    echo "Variable PROJECTS_PATH missing in .zshrc"
+  fi
+}
 
 if [[ -x "$(command -v hx)" ]]; then
   export EDITOR=hx
@@ -148,14 +155,15 @@ if [[ -d ~/.zshrc.d ]]; then
   done
 fi
 
-cdc () {
-  if [[ -v PROJECTS_PATH ]]; then
-    cd "${PROJECTS_PATH}$(command ls -1 ${PROJECTS_PATH} | fzf)"
-  else
-    echo "Variable PROJECTS_PATH missing in .zshrc"
-  fi
-}
-
+# nvm
+export NVM_SYMLINK_CURRENT=true
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac

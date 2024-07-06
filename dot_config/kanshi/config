@@ -11,3 +11,8 @@ profile 3 {
 	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 1920,1080
 	output "Iiyama North America PLG2488H 0" mode 1920x1080@60.000Hz position 1920,0
 }
+
+profile 4 {
+	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 330,1440
+	output "Iiyama North America PL2770QS 1217534311115" mode 2560x1440@59.951Hz position 0,0
+}

@@ -10,11 +10,16 @@ bufferline = "multiple"
 color-modes = true
 true-color = true
 popup-border = "all"
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "warning"
 
 [editor.lsp]
 display-messages = true

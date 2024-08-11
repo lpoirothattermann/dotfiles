@@ -181,7 +181,7 @@ client.urgent           #44475A #FF5555 #F8F8F2 #11ff00   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #11ff00   #282A36
 client.background       #F8F8F2
 
-bindsym $mod+c exec wtype -M ctrl -M shift -k c -m shift -m ctrl
-bindsym $mod+v exec cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy && wtype -M ctrl -M shift -k v -m shift -m ctrl
+bindsym $mod+v exec cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy && wtype -M ctrl -M shift -k v -m shift -m ctrl 
+bindsym $mod+b exec cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy && wtype "$(wl-paste)"
 
 include $HOME/.config/sway/config.d/*

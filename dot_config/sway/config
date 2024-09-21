@@ -8,6 +8,9 @@ set $term /usr/bin/alacritty
 exec_always pkill wl-paste; wl-paste --watch cliphist store
 # Syncthing
 exec flatpak run io.github.martchus.syncthingtray --wait
+# KeepassXC
+exec flatpak run org.keepassxc.KeePassXC
+for_window [title=" - KeePassXC$"] move scratchpad
 ###
 
 set $rofi_cmd rofi \

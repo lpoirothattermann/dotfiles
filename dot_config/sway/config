@@ -3,8 +3,12 @@
 set $mod Mod4
 set $term /usr/bin/alacritty
 
+### Autostart
 # Setup cliphist
 exec_always pkill wl-paste; wl-paste --watch cliphist store
+# Syncthing
+exec flatpak run io.github.martchus.syncthingtray --wait
+###
 
 set $rofi_cmd rofi \
        -terminal '$term'

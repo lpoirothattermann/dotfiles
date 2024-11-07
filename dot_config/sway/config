@@ -19,7 +19,8 @@ set $rofi_cmd rofi \
 set $menu $rofi_cmd -show combi -combi-modes drun -modes combi
 
 # Background
-output * bg /usr/share/backgrounds/default.png fill
+#output * bg /usr/share/backgrounds/default.png fill
+output * bg wallpaper.jpg fill
 
 # Ouputs (monitors)
 # swaymsg -t get_outputs
@@ -29,7 +30,7 @@ exec_always pkill kanshi; exec kanshi
 # swaymsg -t get_inputs
 input "1739:52839:SYNA8018:00_06CB:CE67_Touchpad" {
     accel_profile flat
-    pointer_accel 0.55
+    pointer_accel 0.50
     dwt disabled
     scroll_factor 0.14
     tap enabled

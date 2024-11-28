@@ -119,11 +119,18 @@ else
 fi
 export VISUAL="$EDITOR"
 
+# Executables/scripts shipped with git repository
+export PATH="$HOME/.config/executables:$PATH"
+
+# Composer (PHP)
+if [[ -d $HOME/.config/composer/vendor/bin ]]; then
+  export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+fi
+
 # Go
 if [[ -d $HOME/go/bin ]]; then
   export PATH="$HOME/go/bin:$PATH"
 fi
-
 # Go
 if [[ -d /usr/local/go/bin ]]; then
   export PATH="/usr/local/go/bin:$PATH"
@@ -133,7 +140,6 @@ fi
 if [[ -d $HOME/.tools/flutter/bin ]]; then
   export PATH="$HOME/.tools/flutter/bin:$PATH"
 fi
-
 # Flutter
 if [[ -d $HOME/.pub-cache/bin ]]; then
   export PATH="$HOME/.pub-cache/bin:$PATH"

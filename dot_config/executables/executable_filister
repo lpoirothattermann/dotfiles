@@ -1,8 +1,30 @@
 #!/bin/bash
 # Format directory to feed to LLM
 
+# Convert code base to Golang to improve performances.
+
 find . -type f | while read -r file; do
+    # Images
     if file --mime-type "$file" | grep -q ': image/.\+$'; then
+        continue
+    fi
+
+    # Javascript NPM
+    if [[ $file == *"node_modules/"* ]]; then
+        continue
+    fi
+    if [[ $file == *"dist/"* ]]; then
+        continue
+    fi
+    if [[ $file == *"package-lock.json" ]]; then
+        continue
+    fi
+
+    # PHP Composer
+    if [[ $file == *"vendor/"* ]]; then
+        continue
+    fi
+    if [[ $file == *"composer.lock" ]]; then
         continue
     fi
 

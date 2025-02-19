@@ -19,5 +19,5 @@ profile 4 {
 
 profile 5 {
 	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 330,1440
-	output "Iiyama North America PL2760Q 1154105301564" mode 2560x1440@144.006Hz position 0,0
+	output "Iiyama North America PL2760Q 1154105301564" mode 2560x1440@119.998Hz position 0,0
 }

@@ -1,23 +1,18 @@
+profile noMonitor {
+	output eDP-1 mode 1920x1200@60.003Hz position 0,0
+}
+
 profile 1 {
-	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 0,0
-}
-
-profile 2 {
-	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 720,2640
-	output "Samsung Electric Company S34J55x H4LT303171" mode 3440x1440@49.987Hz position 0,1200
-}
-
-profile 3 {
-	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 1920,1080
+	output eDP-1 mode 1920x1200@60.003Hz position 1920,1080
 	output "Iiyama North America PLG2488H 0" mode 1920x1080@60.000Hz position 1920,0
 }
 
-profile 4 {
-	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 330,1440
-	output "Iiyama North America PL2770QS 1217534311115" mode 2560x1440@60Hz position 0,0
+profile 2 {
+	output eDP-1 mode 1920x1200@60.003Hz position 330,1440
+	output "Iiyama North America PL2770QS 1217534311115" mode 2560x1440@59.951Hz position 0,0
 }
 
-profile 5 {
-	output "Chimei Innolux Corporation 0x143F Unknown" mode 1920x1200@60.003Hz position 330,1440
-	output "Iiyama North America PL2760Q 1154105301564" mode 2560x1440@119.998Hz position 0,0
+profile 3 {
+	output eDP-1 mode 1920x1200@60.003Hz position 330,1440
+	output "Iiyama North America PL2760Q 1154105301564" mode 2560x1440@59.951Hz position 0,0
 }
